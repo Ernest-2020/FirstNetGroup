@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PhotonLogin : MonoBehaviourPunCallbacks
 {
     [SerializeField] private Button _disconnectOrConnectFromServerButton;
+    [SerializeField] private Text _disconnectOrConnectFromServerButtonText;
     /// <summary>
     /// This client's version number. Users are separated from each other bygameVersion(which allows you to make breaking changes).
 /// </summary>
@@ -61,14 +62,14 @@ public class PhotonLogin : MonoBehaviourPunCallbacks
         _disconnectOrConnectFromServerButton.onClick.RemoveListener(Connect);
         _disconnectOrConnectFromServerButton.onClick.AddListener(() => PhotonNetwork.Disconnect());
         _disconnectOrConnectFromServerButton.image.color = Color.red;
-        _disconnectOrConnectFromServerButton.GetComponentInChildren<Text>().text = "Disconnect Photon";
+        _disconnectOrConnectFromServerButtonText.text = "Disconnect Photon";
     }
     private void DisconnectButtonBehaivor()
     {
         _disconnectOrConnectFromServerButton.onClick.RemoveListener(() => PhotonNetwork.Disconnect());
         _disconnectOrConnectFromServerButton.onClick.AddListener(Connect);
         _disconnectOrConnectFromServerButton.image.color = Color.green;
-        _disconnectOrConnectFromServerButton.GetComponentInChildren<Text>().text = "Connect Photon";
+        _disconnectOrConnectFromServerButtonText.text = "Connect Photon";
     }
     public override void OnDisconnected(DisconnectCause cause)
     {

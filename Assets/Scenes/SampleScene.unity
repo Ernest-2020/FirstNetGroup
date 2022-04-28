@@ -805,6 +805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _disconnectOrConnectFromServerButton: {fileID: 2002079100}
+  _disconnectOrConnectFromServerButtonText: {fileID: 1845549900}
 --- !u!1 &1845549898
 GameObject:
   m_ObjectHideFlags: 0
